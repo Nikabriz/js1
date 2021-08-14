@@ -1,15 +1,10 @@
-function rezult() {
-
-var a;
-var b;
-var c;
-
-a = document.getElementById('grad').Value;
-a = parseInt(a);
-
-b = ((9/5)*a+32);
-
-c = (a + " это градусов " + b + " по Фаренгейту");
-c = document.getElementById('tf').innerHTML;
-
-}
+function convertTemp() {
+    var c = document.getElementById('c'), f = document.getElementById('f');
+    if(c.value != '') {
+     f.value = Math.round(c.value * 9 / 5 + 32);
+     c.value = '';
+    } else  {
+     c.value = Math.round((f.value - 32) * 5 / 9);
+     f.value = '';
+    }
+   }
