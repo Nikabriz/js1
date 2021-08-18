@@ -16,7 +16,6 @@ var a = 2;
 var x = 1 + (a *= 2);
 
 alert(x);
-consol.log(x);
 //x = 5
 
 //задание 3
@@ -34,3 +33,56 @@ else if (a > 0 && b < 0 || a < 0 && b > 0) {
     x = a + b;
     alert(x);
 }
+
+//Задание 4
+
+var a = +prompt('Введите число от 0 до 15 ');
+
+switch (a) {
+    case 1:
+        alert("1");
+    case 2:
+        alert("2");
+    case 3:
+        alert("3");
+    case 4:
+        alert("4");
+    case 5:
+        alert("5");
+    case 6:
+        alert("6");
+    case 7:
+        alert("7");
+    case 8:
+        alert("8");
+    case 9:
+        alert("9");
+    case 10:
+        alert("10");
+    case 11:
+        alert("11");
+    case 12:
+        alert("12");
+    case 13:
+        alert("13");
+    case 14:
+        alert("14");
+    case 15:
+        alert("15");
+        break;
+}
+
+//Задание 5
+function maths(x, y)
+{
+   return {
+      sum = x + y,
+      subtraction = x - y,
+      multiplication = x * y,
+      degree = x / y
+   };
+}
+maths(25, 5);
+alert(maths);
+
+
