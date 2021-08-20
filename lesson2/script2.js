@@ -72,17 +72,46 @@ switch (a) {
         break;
 }
 
+
 //Задание 5
-function maths(x, y)
-{
-   return {
-      sum = x + y,
-      subtraction = x - y,
-      multiplication = x * y,
-      degree = x / y
-   };
+
+var a = 2;
+var b = 3;
+
+function plus(a, b) {
+    return a + b;
 }
-maths(25, 5);
-alert(maths);
 
+function minus(a, b) {
+    return a - b;
+}
 
+function div(a, b) {
+    return a / b;
+}
+
+function mult(a, b) {
+    return a * b;
+}
+
+// Задание 6
+
+function mathOperation(arg1, arg2, operation) {
+    switch (operation) {
+        case 'plus':
+            return arg1 + arg2;
+            break;
+        case 'minus':
+            return arg1 - arg2;
+            break;
+        case 'division':
+            return arg1 / arg2;
+            break;
+        case 'multiplication':
+            return arg1 * arg2;
+            break;
+
+            default:
+                return 'ошибка'
+    }
+}
