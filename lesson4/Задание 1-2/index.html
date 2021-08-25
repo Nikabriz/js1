@@ -14,18 +14,131 @@
 </head>
 
 <body>
-<canvas id="canvas" width="640" height="640"></canvas>
-<script>
+    <canvas id="canvas" width="720" height="720"></canvas>
+    <script>
 
-let canvas = document.querySelector('#canvas');
-let ctx = canvas.getContext('2d');
-let w = canvas.width / 8;
-let h = w;
-console.log(w, h);
+        let canvas = document.querySelector('#canvas');
+        let ctx = canvas.getContext('2d');
+       let offset = 75;
+       
+       //Задание 1
+       
+        ctx.font = "20px Arial";
+        ctx.fillText("8", offset / 2 - 5, offset * 2 - 5);
+        ctx.fillText("7", offset / 2 - 5, offset * 3 - 5);
+        ctx.fillText("6", offset / 2 - 5, offset * 4 - 5);
+        ctx.fillText("5", offset / 2 - 5, offset * 5 - 5);
+        ctx.fillText("4", offset / 2 - 5, offset * 6 - 5);
+        ctx.fillText("3", offset / 2 - 5, offset * 7 - 5);
+        ctx.fillText("2", offset / 2 - 5, offset * 8 - 5);
+        ctx.fillText("1", offset / 2 - 5, offset * 9 - 5);
+    
+        ctx.fillText("A", offset * 1 + 5, offset / 2 + 5);
+        ctx.fillText("B", offset * 2 + 5, offset / 2 + 5);
+        ctx.fillText("C", offset * 3 + 5, offset / 2 + 5);
+        ctx.fillText("D", offset * 4 + 5, offset / 2 + 5);
+        ctx.fillText("E", offset * 5 + 5, offset / 2 + 5);
+        ctx.fillText("F", offset * 6 + 5, offset / 2 + 5);
+        ctx.fillText("G", offset * 7 + 5, offset / 2 + 5);
+        ctx.fillText("H", offset * 8 + 5, offset / 2 + 5);
+
+        drawCell(offset, offset, "black");
+        drawCell(offset * 2, offset, "white");
+        drawCell(offset * 3, offset, "black");
+        drawCell(offset * 4, offset, "white");
+        drawCell(offset * 5, offset, "black");
+        drawCell(offset * 6, offset, "white");
+        drawCell(offset * 7, offset, "black");
+        drawCell(offset * 8, offset, "white");
+
+        drawCell(offset * 2, offset * 2, "black");
+        drawCell(offset * 2, offset * 3, "white");
+        drawCell(offset * 2, offset * 4, "black");
+        drawCell(offset * 2, offset * 5, "white");
+        drawCell(offset * 2, offset * 6, "black");
+        drawCell(offset * 2, offset * 7, "white");
+        drawCell(offset * 2, offset * 8, "black");
+        drawCell(offset * 2, offset * 9, "white");
+
+        drawCell(offset * 4, offset * 2, "black");
+        drawCell(offset * 4, offset * 3, "white");
+        drawCell(offset * 4, offset * 4, "black");
+        drawCell(offset * 4, offset * 5, "white");
+        drawCell(offset * 4, offset * 6, "black");
+        drawCell(offset * 4, offset * 7, "white");
+        drawCell(offset * 4, offset * 8, "black");
+        drawCell(offset * 4, offset * 9, "white");
+
+        drawCell(offset * 6, offset * 2, "black");
+        drawCell(offset * 6, offset * 3, "white");
+        drawCell(offset * 6, offset * 4, "black");
+        drawCell(offset * 6, offset * 5, "white");
+        drawCell(offset * 6, offset * 6, "black");
+        drawCell(offset * 6, offset * 7, "white");
+        drawCell(offset * 6, offset * 8, "black");
+        drawCell(offset * 6, offset * 9, "white");
+
+        drawCell(offset * 8, offset * 2, "black");
+        drawCell(offset * 8, offset * 3, "white");
+        drawCell(offset * 8, offset * 4, "black");
+        drawCell(offset * 8, offset * 5, "white");
+        drawCell(offset * 8, offset * 6, "black");
+        drawCell(offset * 8, offset * 7, "white");
+        drawCell(offset * 8, offset * 8, "black");
+        drawCell(offset * 8, offset * 9, "white");
+
+        drawCell(offset * 1, offset * 3, "black");
+        drawCell(offset * 1, offset * 4, "white");
+        drawCell(offset * 1, offset * 5, "black");
+        drawCell(offset * 1, offset * 6, "white");
+        drawCell(offset * 1, offset * 7, "black");
+        drawCell(offset * 1, offset * 8, "white");
+    
+        drawCell(offset * 3, offset * 3, "black");
+        drawCell(offset * 3, offset * 4, "white");
+        drawCell(offset * 3, offset * 5, "black");
+        drawCell(offset * 3, offset * 6, "white");
+        drawCell(offset * 3, offset * 7, "black");
+        drawCell(offset * 3, offset * 8, "white");
+      
+        drawCell(offset * 5, offset * 3, "black");
+        drawCell(offset * 5, offset * 4, "white");
+        drawCell(offset * 5, offset * 5, "black");
+        drawCell(offset * 5, offset * 6, "white");
+        drawCell(offset * 5, offset * 7, "black");
+        drawCell(offset * 5, offset * 8, "white");
+
+        drawCell(offset * 7, offset * 3, "black");
+        drawCell(offset * 7, offset * 4, "white");
+        drawCell(offset * 7, offset * 5, "black");
+        drawCell(offset * 7, offset * 6, "white");
+        drawCell(offset * 7, offset * 7, "black");
+        drawCell(offset * 7, offset * 8, "white");
+
+        drawLine(offset * 9, offset, offset * 9, offset * 9); // Right border
+        drawLine(offset, offset, offset, offset * 9); // Left border
+        drawLine(offset, offset, offset * 9, offset); // Top border
+        drawLine(offset, offset * 9, offset * 9, offset * 9);
+
+        function drawCell(x, y, color)
+        {
+            ctx.beginPath();
+            ctx.rect(x, y, 75, 75);
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+ 
+        function drawLine(x0, y0, x1, y1)
+        {
+            ctx.beginPath();       // Start a new path
+            ctx.strokeStyle = "black";
+            ctx.moveTo(x0, y0);    // Move the pen to (x0, y0)
+            ctx.lineTo(x1, y1);    // Draw a line to (x1, y1)
+            ctx.stroke();          // Render the path
+        }
 
 
-
-</script>
+    </script>
 </body>
 
 </html>
