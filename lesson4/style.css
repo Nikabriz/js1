@@ -1,0 +1,22 @@
+.main-block {
+    width : 640px;
+    height: 640px;
+    margin: 30px auto;
+    border: 2px solid black;
+}
+
+.block {
+    width : 80px;
+    height: 80px;
+    float : left;
+}
+
+.black {
+    background: black;
+    color     : white;
+}
+
+.white {
+    background: white;
+    color     : #000;
+}
