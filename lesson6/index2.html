@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style2.css">
+    <script src="script2.js" defer></script>
+</head>
+
+<body>
+    <div id='container' class='Container'>
+        <h1>ПОМЕСТИТЬ В КОРЗИНУ</h1>
+        <div class='Items'>
+            <div class='item' id='01' onclick>
+                <img src='./img/bunny-155674_640.png' width="100" height="100"><br>
+                <p class='price' id='1'>1540</p>
+                <button class='item_button'>Купить</button>
+                <button class='del_button'>Удалить</button>
+            </div>
+            <div class='item' id='02' onclick>
+                <img src='./img/lamb-1388937_640.png' width="100" height="100"><br>
+                <p class='price' id='2'>345</p>
+                <button class='item_button'>Купить</button>
+                <button class='del_button'>Удалить</button>
+            </div>
+            <div class='item' id='03'>
+                <img src='./img/hamburger-576419_640.png' width="150" height="100" onclick><br>
+                <p class='price' id='3'>766</p>
+                <button class='item_button'>Купить</button>
+                <button class='del_button'>Удалить</button>
+            </div>
+            <div class='item' id='04'>
+                <img src='./img/pineapples-576576_640.png' width="180" height="100" onclick><br>
+                <p class='price' id='4'>934</p>
+                <button class='item_button'>Купить</button>
+                <button class='del_button'>Удалить</button>
+            </div>
+            <div class='item' id='05'>
+                <img src='./img/car-33556_640.png' width="180" height="100" onclick><br>
+                <p class='price' id='5'>50000</p>
+                <button class='item_button'>Купить</button>
+                <button class='del_button'>Удалить</button>
+            </div>
+        </div>
+
+        <div class='RecycleContentFields'>
+            <h1>Корзина</h1>
+            <div class='recycleContent'>
+                <address></address>
+            </div>
+            <div class='infoblock'>
+                <p class='summ'>Итого</p>
+                <button id='clear'>Очистить корзину</button>
+
+            </div><br>
+            <div id='recycle' onclick>
+                <div id='infotext'>В вашей корзине пусто</div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
