@@ -24,7 +24,7 @@ function addItem() {
 
 //Обработка нажатия на кнопку для добавления элемента в корзину
 let item_button = document.getElementsByClassName('item_button');
-for (var i = 0; i < item_button.length; i++) {
+for (let i = 0; i < item_button.length; i++) {
     item_button[i].onclick = addItem;
 };
 //Очистка корзины 
@@ -43,6 +43,6 @@ function delItem() {
     this.parentElement.remove()
 }
 //Обработка нажания на кнопку для удаления элементы из корзины
-for (var i = 0; i < del_button.length; i++) {
+for (let i = 0; i < del_button.length; i++) {
     del_button[i].setAttribute('onclick', 'delItem.call(this)');
 }
